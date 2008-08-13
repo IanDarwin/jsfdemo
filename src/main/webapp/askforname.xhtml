@@ -10,12 +10,12 @@
 						
 			<ui:define name="pageTitle">#{msg.askforname_pagetitle}</ui:define>
   
-			<ui:define name="pageHeader">#{msg.askforname_pagetitle}</ui:define>
+			<ui:define name="pageHeader">#{msg.askforname_pageheader}</ui:define>
 
 			<ui:define name="body">
 				<h:message showSummary="true" showDetail="false" style="color: red; font-weight: bold;" for="name" />
 				<h:form id="helloForm">
-					${msg.askforname_text}
+					${msg.askforname_prompt}
 					<h:inputText required="true" id="name" value="#{person.name}" />
 					<h:commandButton id="submit"
 						action="greeting" value="Say Hello" />

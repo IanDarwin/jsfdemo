@@ -8,11 +8,11 @@
   <managed-bean-scope>request</managed-bean-scope>
   <managed-property>
    <property-name>name</property-name>
-   <value/>
+   <value></value>
   </managed-property>
  </managed-bean>
  <navigation-rule>
-  <from-view-id>/pages/inputname.xhtml</from-view-id>
+  <from-view-id>/pages/askforname.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>greeting</from-outcome>
    <to-view-id>/pages/greeting.xhtml</to-view-id>
