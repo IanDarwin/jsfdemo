@@ -6,10 +6,6 @@
   <managed-bean-name>person</managed-bean-name>
   <managed-bean-class>demo.Person</managed-bean-class>
   <managed-bean-scope>request</managed-bean-scope>
-  <managed-property>
-   <property-name>name</property-name>
-   <value></value>
-  </managed-property>
  </managed-bean>
  <navigation-rule>
   <from-view-id>/pages/askforname.xhtml</from-view-id>

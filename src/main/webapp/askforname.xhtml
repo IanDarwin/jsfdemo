@@ -13,12 +13,16 @@
 			<ui:define name="pageHeader">#{msg.askforname_pageheader}</ui:define>
 
 			<ui:define name="body">
-				<h:message showSummary="true" showDetail="false" style="color: red; font-weight: bold;" for="name" />
+				<h:messages showSummary="true" showDetail="false" style="color: red; font-weight: bold;"/>
 				<h:form id="helloForm">
-					${msg.askforname_prompt}
-					<h:inputText required="true" id="name" value="#{person.name}" />
+					<h:panelGrid columns='2'>
+					${msg.askforname_prompt_firstname}
+					<h:inputText required="true" id="firstName" value="#{person.firstName}" />
+					${msg.askforname_prompt_lastname}
+					<h:inputText required="true" id="lastName" value="#{person.lastName}" />
 					<h:commandButton id="submit"
 						action="greeting" value="#{msg.askforname_buttontext}" />
+					</h:panelGrid>
 				</h:form>
 				
 			</ui:define>
