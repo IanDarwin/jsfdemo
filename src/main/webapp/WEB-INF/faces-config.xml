@@ -8,7 +8,7 @@
   <managed-bean-scope>request</managed-bean-scope>
   <managed-property>
    <property-name>name</property-name>
-   <value> </value>
+   <value></value>
   </managed-property>
  </managed-bean>
  <navigation-rule>

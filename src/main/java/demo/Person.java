@@ -4,7 +4,7 @@ package demo;
  * Created by JBoss Tools
  */
 public class Person {
-	private String name = "";
+	private String name;
 
 	public Person() {
 	}
