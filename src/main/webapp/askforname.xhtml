@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+   		<f:loadBundle basename="resources" var="msg" />
+
+   		<ui:composition template="/templates/standard.xhtml">
+						
+			<ui:define name="pageTitle">#{msg.askforname_pagetitle}</ui:define>
+  
+			<ui:define name="pageHeader">#{msg.askforname_pagetitle}</ui:define>
+
+			<ui:define name="body">
+				<h:message showSummary="true" showDetail="false" style="color: red; font-weight: bold;" for="name" />
+				<h:form id="helloForm">
+					${msg.askforname_text}
+					<h:inputText required="true" id="name" value="#{person.name}" />
+					<h:commandButton id="submit"
+						action="greeting" value="Say Hello" />
+				</h:form>
+				
+			</ui:define>
+		</ui:composition>
+</html>
