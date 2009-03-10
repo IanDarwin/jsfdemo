@@ -5,6 +5,7 @@
     <property name="webinf.dir" value="${webroot.dir}/WEB-INF"/>
     <property name="build.dir" value="build"/>
     <property name="deploy.dir" value="deploy"/>
+	<property name="project.distname" value="jsfdemo"/>
 
     <!-- classpath for JSF -->
     <path id="compile.classpath">
