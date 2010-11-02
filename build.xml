@@ -1,24 +1,24 @@
-<project name="jsfdemo" default="build">
+<project name="jsfdemo" default="deploy">
+
+    <property name="project.distname" value="jsfdemo"/>
 
     <property name="src" value="src"/>
     <property name="webroot.dir" value="${basedir}/web"/>
     <property name="webinf.dir" value="${webroot.dir}/WEB-INF"/>
+    <property name="lib.dir" value="lib"/>
     <property name="build.dir" value="build"/>
-	<property name="jboss.home" value="/usr/local/jboss"/>
-    <property name="deploy.dir" value="${jboss.home}/server/default/deploy"/>
-	<property name="project.distname" value="jsfdemo"/>
+    <property file="build.properties"/>
 
     <!-- classpath for JSF -->
     <path id="compile.classpath">
-        <pathelement path ="${webinf.dir}/lib/commons-beanutils.jar"/>
-        <pathelement path ="${webinf.dir}/lib/commons-collections.jar"/>
-        <pathelement path ="${webinf.dir}/lib/commons-digester.jar"/>
-        <pathelement path ="${webinf.dir}/lib/commons-logging.jar"/>
-        <pathelement path ="${webinf.dir}/lib/jsf-api.jar"/>
-        <pathelement path ="${webinf.dir}/lib/jsf-impl.jar"/>
-        <pathelement path ="${webinf.dir}/lib/jstl.jar"/>
-        <pathelement path ="${webinf.dir}/lib/standard.jar"/>
-        <pathelement path ="${webinf.dir}/classes"/>
+        <pathelement path ="${lib.dir}/commons-beanutils.jar"/>
+        <pathelement path ="${lib.dir}/commons-collections.jar"/>
+        <pathelement path ="${lib.dir}/commons-digester.jar"/>
+        <pathelement path ="${lib.dir}/commons-logging.jar"/>
+        <pathelement path ="${lib.dir}/jsf-api.jar"/>
+        <pathelement path ="${lib.dir}/jsf-impl.jar"/>
+        <pathelement path ="${lib.dir}/jstl.jar"/>
+        <pathelement path ="${lib.dir}/standard.jar"/>
         <pathelement path ="${classpath}"/>
     </path>
 
@@ -30,7 +30,7 @@
     <target name="resources">
         <copy todir="${webinf.dir}/classes" includeEmptyDirs="no">
             <fileset dir="resources">
-                <include name="**/*.properties"/>
+                <include name="*.properties"/>
 			</fileset>
         </copy>
     </target>
@@ -50,8 +50,7 @@
       <mkdir  dir="${webinf.dir}/classes"/>
     </target>
 
-    <!-- Create binary distribution -->
-    <target name="war" depends="build">
+    <target name="war" depends="build" description="Create binary distribution">
       <mkdir dir="${build.dir}"/>
       <war
         basedir="${webroot.dir}"
@@ -63,7 +62,7 @@
        </war>
     </target>
 
-    <target name="deploy" depends="war">
+    <target name="deploy" depends="war" description="Deploy to server">
        <delete file="${deploy.dir}/${project.distname}.war"/>
        <delete dir="${deploy.dir}/${project.distname}"/>
        <copy file="${build.dir}/${project.distname}.war" todir="${deploy.dir}"/>

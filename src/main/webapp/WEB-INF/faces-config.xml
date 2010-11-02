@@ -6,14 +6,7 @@
   	<phase-listener>debug.DebugPhaseListener
   	</phase-listener>
   </lifecycle>
-  <application>
-    <view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
-    <locale-config>
-      <default-locale>en</default-locale>
-      <supported-locale>es</supported-locale>
-    </locale-config>
-  </application>
-   <managed-bean>
+ <managed-bean>
   <managed-bean-name>person</managed-bean-name>
   <managed-bean-class>demo.Person</managed-bean-class>
   <managed-bean-scope>request</managed-bean-scope>
