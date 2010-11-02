@@ -4,7 +4,7 @@
  <description>Ian's JSF and Facelets Demo</description>
  <display-name>jsfdemo</display-name>
  <context-param>
-  <param-name>facelets.REFRESH_PERIOD</param-name>
+  <param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
   <param-value>2</param-value>
  </context-param>
  <context-param>
