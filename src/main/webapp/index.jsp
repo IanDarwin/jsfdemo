@@ -3,6 +3,6 @@
 <head>
 </head>
 <body>
-	<jsp:forward page="pages/askforname.jsf"/>
+	<jsp:forward page="askforname.jsf"/>
 </body>
 </html>
