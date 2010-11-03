@@ -6,11 +6,6 @@
   	<phase-listener>debug.DebugPhaseListener
   	</phase-listener>
   </lifecycle>
- <managed-bean>
-  <managed-bean-name>person</managed-bean-name>
-  <managed-bean-class>demo.Person</managed-bean-class>
-  <managed-bean-scope>request</managed-bean-scope>
- </managed-bean>
  <navigation-rule>
   <from-view-id>/pages/askforname.xhtml</from-view-id>
   <navigation-case>
