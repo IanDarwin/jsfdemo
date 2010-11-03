@@ -16,7 +16,7 @@ public class DebugPhaseListener implements PhaseListener {
 	
 	/** Called when a phase is ending */
 	public void afterPhase(PhaseEvent evt) {
-		System.out.println(PROG + " ending:   " + evt.getPhaseId());	
+		// System.out.println(PROG + " ending:   " + evt.getPhaseId());	
 	}
 
 	/** Called to find out what phaseId's we are interested in */
