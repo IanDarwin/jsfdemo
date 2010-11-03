@@ -1,5 +1,8 @@
 package demo;
 
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean
 public class Person {
 	private String firstName, lastName;
 
