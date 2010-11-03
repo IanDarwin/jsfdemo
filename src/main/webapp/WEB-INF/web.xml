@@ -22,6 +22,6 @@
  </servlet>
  <servlet-mapping>
   <servlet-name>Faces Servlet</servlet-name>
-  <url-pattern>*.jsf</url-pattern>
+  <url-pattern>*.web</url-pattern>
  </servlet-mapping>
 </web-app>
