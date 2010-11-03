@@ -28,6 +28,11 @@ public class Person {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
+	public String savePerson() {
+		System.out.println("Saving person " + firstName + ' ' + lastName);
+		return "greeting";
+	}
 
 	@Override
 	public int hashCode() {

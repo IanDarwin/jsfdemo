@@ -4,7 +4,9 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
 
-   		<f:loadBundle basename="resources" var="msg" />
+	<f:loadBundle basename="resources" var="msg" />
+
+	<h:body>
 
    		<ui:composition template="/templates/standard.xhtml">
 						
@@ -27,10 +29,12 @@
 					
 					<h:outputText value=""/>
 					<h:commandButton id="submit"
-						action="greeting" value="#{msg.askforname_buttontext}" />
+						action="#{person.savePerson}" 
+						value="#{msg.askforname_buttontext}" />
 					</h:panelGrid>
 				</h:form>
 				
 			</ui:define>
 		</ui:composition>
+	</h:body>
 </html>
