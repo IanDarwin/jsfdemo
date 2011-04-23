@@ -10,17 +10,18 @@
 
   <!-- Enable this to see when JSF phases get called -->
   <lifecycle>
-  	<phase-listener>debug.DebugPhaseListener
-  	</phase-listener>
+  	<phase-listener>debug.DebugPhaseListener</phase-listener>
   </lifecycle>
 
 	<!-- List here the languages you want to support -->
-	<application>
-      <locale-config>
-         <default-locale>en</default-locale>
-         <supported-locale>en</supported-locale>
-         <supported-locale>es</supported-locale>
-      </locale-config>
-	</application>
+  <application>
+	<!-- tell JSF to use Facelets -->
+	<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
+	<locale-config>
+		<default-locale>en</default-locale>
+		<supported-locale>en</supported-locale>
+		<supported-locale>es</supported-locale>
+	</locale-config>
+  </application>
 	
 </faces-config>
