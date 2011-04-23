@@ -16,9 +16,8 @@
 	<pathelement path ="${lib.dir}/commons-digester.jar"/>
 	<pathelement path ="${lib.dir}/commons-logging.jar"/>
 	<pathelement path ="${lib.dir}/jsf-api.jar"/>
+	<pathelement path ="${lib.dir}/jsf-facelets.jar"/>
 	<pathelement path ="${lib.dir}/jsf-impl.jar"/>
-	<pathelement path ="${lib.dir}/jstl.jar"/>
-	<pathelement path ="${lib.dir}/standard.jar"/>
 	<pathelement path ="${classpath}"/>
 	</path>
 
@@ -37,29 +36,31 @@
 
 	<!-- Copy library jar files -->
 	<target name="copyjars">
+		<mkdir  dir="${webinf.dir}/lib"/>
 		<copy todir="${webinf.dir}/lib" includeEmptyDirs="no">
 			<fileset dir="lib">
-				<include name="jsf-facelets.jar"/>
+				<include name="jsf-*.jar"/>
 			</fileset>
 		</copy>
 	</target>
 
 	<!-- Normal build of application -->
-	<target name="build" depends="init,copyresources,copyjars">
-	<javac srcdir="${src}" 
-		debug='true' destdir="${webinf.dir}/classes">
-		<classpath refid="compile.classpath"/>
-	</javac>
+	<target name="compile" depends="init,copyresources,copyjars">
+		<mkdir  dir="${webinf.dir}/classes"/>
+		<javac srcdir="${src}" 
+			debug='true' destdir="${webinf.dir}/classes">
+			<classpath refid="compile.classpath"/>
+		</javac>
 	</target>
 
 	<!-- Remove classes directory for clean build -->
 	<target name="clean"
 		description="Prepare for clean build">
 		<delete dir="${webinf.dir}/classes"/>
-		<mkdir  dir="${webinf.dir}/classes"/>
+		<delete dir="${webinf.dir}/lib"/>
 	</target>
 
-	<target name="war" depends="build" description="Create binary distribution">
+	<target name="war" depends="compile" description="Create binary distribution">
 		<mkdir dir="${build.dir}"/>
 		<war
 			basedir="${webroot.dir}"
