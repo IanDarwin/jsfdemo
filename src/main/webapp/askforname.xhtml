@@ -23,11 +23,11 @@
 				<h:form id="helloForm">
 					<h:panelGrid columns='3'>
 
-					#{msg.askforname_prompt_firstname}
+					<h:outputText value="#{msg.askforname_prompt_firstname}"/>
 					<h:inputText required="true" id="firstName" value="#{person.firstName}" />
 					<h:message for="firstName" errorStyle="color:red"/>
 
-					#{msg.askforname_prompt_lastname}
+					<h:outputText value="#{msg.askforname_prompt_lastname}"/>
 					<h:inputText required="true" id="lastName" value="#{person.lastName}" />
 					<h:message for="lastName"  errorStyle="color:red"/>
 					
