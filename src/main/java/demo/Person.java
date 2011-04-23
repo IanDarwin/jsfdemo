@@ -28,11 +28,6 @@ public class Person {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
-	public String savePerson() {
-		System.out.println("Saving person " + firstName + ' ' + lastName);
-		return "greeting";
-	}
 
 	@Override
 	public int hashCode() {
@@ -49,7 +44,7 @@ public class Person {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
+		if (Person.class != obj.getClass())
 			return false;
 		final Person other = (Person) obj;
 		if (firstName == null) {
