@@ -4,8 +4,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
 @ManagedBean
-public class PersonDao {
-	@ManagedProperty("person") Person person;
+public class PersonHandler {
+	@ManagedProperty(value="#{person}") Person person;
 
 	public String savePerson() {
 		System.out.println("Saving person " + person.getFirstName() + ' ' + person.getLastName());
