@@ -1,4 +1,14 @@
 This is Ian's JSF and Facelets demo project.
 
-It was originally created by JBoss Tools,
-but has been pretty much completely rewritten.
+It shows I18N as well as a simple "managed bean"
+structure with one data bean and one action bean,
+the recommended split that is NOT used in most
+introductory examples.
+
+To I18N a JSF app:
+	* create Properties files for the languages;
+	* list the languages in faces-config.xml;
+	* f:bundle to load the props, and change ALL
+		plain text to JSF-EL
+
+Should be ready to go!
