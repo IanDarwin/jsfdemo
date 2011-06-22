@@ -48,7 +48,9 @@
 	<target name="compile" depends="init,copyresources,copyjars">
 		<mkdir  dir="${webinf.dir}/classes"/>
 		<javac srcdir="${src}" 
-			debug='true' destdir="${webinf.dir}/classes">
+			debug='true'
+			destdir="${webinf.dir}/classes"
+			includeantruntime="false">
 			<classpath refid="compile.classpath"/>
 		</javac>
 	</target>
