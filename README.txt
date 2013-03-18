@@ -8,7 +8,7 @@ introductory examples.
 To I18N a JSF app:
 	* create Properties files for the languages;
 	* list the languages in faces-config.xml;
-	* f:bundle to load the props, and change ALL
+	* f:loadBundle to load the props, and change ALL
 		plain text to JSF-EL
 
 Should be ready to go!
