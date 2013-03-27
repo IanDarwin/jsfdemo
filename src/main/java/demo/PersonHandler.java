@@ -8,7 +8,11 @@ public class PersonHandler {
 	@ManagedProperty(value="#{person}") Person person;
 
 	public String savePerson() {
-		System.out.println("Saving person " + person.getFirstName() + ' ' + person.getLastName());
+		System.out.println(
+			"Saving person " + person.getFirstName() + ' ' + person.getLastName());
+
+		// In real life there would be code to save the Person object into the database!
+
 		return "saved";
 	}
 
