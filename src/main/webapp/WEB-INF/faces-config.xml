@@ -15,8 +15,6 @@
 
 	<!-- List here the languages you want to support -->
   <application>
-	<!-- tell JSF to use Facelets -->
-	<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
 	<locale-config>
 		<default-locale>en</default-locale>
 		<supported-locale>en</supported-locale>

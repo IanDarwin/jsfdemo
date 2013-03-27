@@ -11,13 +11,7 @@
 
 	<!-- classpath for JSF -->
 	<path id="compile.classpath">
-	<pathelement path ="${lib.dir}/commons-beanutils.jar"/>
-	<pathelement path ="${lib.dir}/commons-collections.jar"/>
-	<pathelement path ="${lib.dir}/commons-digester.jar"/>
-	<pathelement path ="${lib.dir}/commons-logging.jar"/>
-	<pathelement path ="${lib.dir}/jsf-api.jar"/>
-	<pathelement path ="${lib.dir}/jsf-facelets.jar"/>
-	<pathelement path ="${lib.dir}/jsf-impl.jar"/>
+	<pathelement path ="${lib.dir}/javax.faces-2.1.17.jar"/>
 	<pathelement path ="${classpath}"/>
 	</path>
 
@@ -39,7 +33,7 @@
 		<mkdir  dir="${webinf.dir}/lib"/>
 		<copy todir="${webinf.dir}/lib" includeEmptyDirs="no">
 			<fileset dir="lib">
-				<include name="jsf-*.jar"/>
+				<include name="*.jar"/>
 			</fileset>
 		</copy>
 	</target>
