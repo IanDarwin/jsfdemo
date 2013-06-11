@@ -7,6 +7,7 @@
 	<property name="webinf.dir" value="${webroot.dir}/WEB-INF"/>
 	<property name="lib.dir" value="lib"/>
 	<property name="build.dir" value="build"/>
+	
 	<property file="build.properties"/>
 
 	<!-- classpath for JSF -->
@@ -73,7 +74,14 @@
 		<delete dir="${deploy.dir}/${project.distname}"/>
 		<copy file="${build.dir}/${project.distname}.war" todir="${deploy.dir}"/>
 	</target>
-
+	
+	<target name="deploy-gf" depends="war" description="Deploy to GlassFish using proprietary tools">
+		<exec executable="${as-install}/bin/asadmin.bat">
+			<arg value="deploy"/>
+			<arg value="${build.dir}/${project.distname}.war"/>
+		</exec>
+	</target>
+		
 	<target name="undeploy" description="Undeploy from server">
 		<delete file="${deploy.dir}/${project.distname}.war"/>
 	</target>
