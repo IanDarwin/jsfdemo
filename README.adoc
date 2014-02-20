@@ -1,3 +1,5 @@
+== jsfdemo
+
 This is Ian's JSF and Facelets demo project.
 
 It shows I18N as well as a simple "managed bean"
