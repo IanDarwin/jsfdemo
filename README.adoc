@@ -13,4 +13,4 @@ To I18N a JSF app:
 	* f:loadBundle to load the props, and change ALL
 		plain text to JSF-EL
 
-Should be ready to go!
+Recently worked with Eclipse; has been mavenized, hope it still works ATM.
