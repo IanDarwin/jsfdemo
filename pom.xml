@@ -23,8 +23,11 @@
 
 	<dependencies>
 
-		<!-- Commented out while using 3.6-SNAPSHOT.jar from lib <dependency> <groupId>org.primefaces</groupId> 
-			<artifactId>primefaces</artifactId> <version>3.5</version> </dependency> -->
+		<dependency> 
+			<groupId>org.primefaces</groupId> 
+			<artifactId>primefaces</artifactId> 
+			<version>4.0</version> 
+		</dependency>
 
 		<!-- For JBossAS deployment -->
 		<dependency>
