@@ -8,6 +8,7 @@ the recommended split that is NOT used in most
 introductory examples.
 
 To I18N a JSF app:
+
 	* create Properties files for the languages;
 	* list the languages in faces-config.xml;
 	* f:loadBundle to load the props, and change ALL
