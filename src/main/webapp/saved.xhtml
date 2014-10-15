@@ -17,6 +17,14 @@
 			<ui:define name="pageHeader">#{msg.greeting_pageheader}</ui:define>
 			<ui:define name="body">
 				#{msg.greeting_text} #{person.name}!
+				<br/>
+				#{msg.now_see_demos}
+				<ul>
+				<li><h:outputLink value="datatabledemo.web">
+					#{msg.link_datatable}
+				</h:outputLink></li>
+				<!-- Add other demos here? -->
+				</ul>
 			</ui:define>
 	</ui:composition>
 </html>
