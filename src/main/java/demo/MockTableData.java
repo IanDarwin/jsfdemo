@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 
-@ManagedBean
+@ManagedBean(name="searchResults")
 public class MockTableData {
 
 	static final List<Person> resultData = new ArrayList<Person>();
@@ -25,10 +25,10 @@ public class MockTableData {
 			p.setCountry(data[3]);
 			resultData.add(p);
 		}
+		resultData.get(0).setAddress("123 Main St");
 	}
 
 	public List<Person> getResults() {
-		System.out.println("Returning " + resultData.size());
 		return resultData;
 	}
 }

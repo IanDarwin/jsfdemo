@@ -4,12 +4,16 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
 
+	<f:loadBundle basename="resources" var="msg" />
+	
 	<ui:composition template="/templates/standard.xhtml">
 			<ui:define name="pageTitle">A Simple DataTable Demo</ui:define>
 			<ui:define name="pageHeader"></ui:define>
 			<ui:define name="body">
-				<h:dataTable 
-					var="p" value="#{mockTableData.results}"
+				<h:outputText rendered="#{ empty searchResults.results}"
+					value="#{msg.no_results_found}"/>
+				<h:dataTable  rendered="#{!empty searchResults.results}"
+					var="p" value="#{searchResults.results}"
 					rowClasses="rowOdd,rowEven"
 					border='1'>
 					<h:column>
