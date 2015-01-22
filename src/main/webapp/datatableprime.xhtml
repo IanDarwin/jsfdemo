@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<f:loadBundle basename="resources" var="msg" />
+	
+	<ui:composition template="/templates/standard.xhtml">
+			<ui:define name="pageTitle">#{msg.datatable_demo}</ui:define>
+			<ui:define name="pageHeader">#{msg.datatable_demo}</ui:define>
+			<ui:define name="body">
+				<p:panel rendered="#{ empty searchResults.results}">
+					<h:outputText value="#{msg.no_results_found}"/>
+				</p:panel>
+				<p:dataTable  rendered="#{!empty searchResults.results}"
+					var="p" value="#{searchResults.results}">
+					<p:column>
+						#{p.name}
+						<f:facet name="header">Name</f:facet>
+					</p:column>
+					<p:column>
+						#{p.address}
+						<f:facet name="header">Address</f:facet>
+					</p:column>
+					<p:column>
+						#{p.city}
+						<f:facet name="header">City</f:facet>
+					</p:column>
+				</p:dataTable>
+			</ui:define>
+	</ui:composition>
+</html>
