@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 
+/** Provide some fake data so that this project can run without needing to set up JPA */
 @ManagedBean(name="searchResults")
 public class MockTableData {
 
