@@ -30,11 +30,18 @@
 					<h:outputText value="#{msg.askforname_prompt_lastname}"/>
 					<h:inputText required="true" id="lastName" value="#{person.lastName}" />
 					<h:message for="lastName"  errorStyle="color:red"/>
+
+					<h:outputText value="#{msg.askforname_prompt_aboutYou}"/>
+					<h:inputTextarea required="false" id="aboutYou" value="#{person.aboutYou}" 
+						rows='5' cols="40"/>
+					<h:message for="aboutYou"  errorStyle="color:red"/>
 					
 					<h:outputText value=""/>
 					<h:commandButton id="submit"
 						action="#{personHandler.savePerson}" 
-						value="#{msg.askforname_buttontext}" />
+						value="#{msg.askforname_buttontext}">
+						<f:ajax execute="@form" render="@form" />
+					</h:commandButton>
 					</h:panelGrid>
 				</h:form>
 				

@@ -6,6 +6,7 @@ import javax.faces.bean.ManagedBean;
 public class Person {
 	private String firstName, lastName;
 	private String address, city, country;
+	private String aboutYou;
 
 	public Person() {
 	}
@@ -28,6 +29,14 @@ public class Person {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public String getAboutYou() {
+		return aboutYou;
+	}
+
+	public void setAboutYou(String aboutYou) {
+		this.aboutYou = aboutYou;
 	}
 
 	@Override
