@@ -13,7 +13,7 @@ public class PersonHandler {
 
 		// In real life there would be code to save the Person object into the database!
 
-		return "saved";
+		return "welcome";
 	}
 
 	public Person getPerson() {
