@@ -50,7 +50,9 @@
 		<!-- Maven will append the version to the finalName (which is the name 
 			given to the generated war, and hence the context root) -->
 		<finalName>${project.artifactId}</finalName>
+
 		<plugins>
+
 			<!-- Compiler plugin enforces Java compatibility and activates annotation 
 				processors -->
 			<plugin>
@@ -61,6 +63,8 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
+
+			<!-- Configure Maven WAR plugin a bit -->
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.1.1</version>
@@ -68,13 +72,12 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
-			<!-- The JBoss AS plugin deploys your war to a local JBoss AS container -->
-			<!-- To use, set the JBOSS_HOME environment variable and run: mvn package 
-				jboss-as:deploy -->
+
+			<!-- Java EE AppServer: WildFly -->
 			<plugin>
-				<groupId>org.jboss.as.plugins</groupId>
-				<artifactId>jboss-as-maven-plugin</artifactId>
-				<version>7.1.1.Final</version>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>1.0.2.Final</version>
 			</plugin>
 		</plugins>
 	</build>
