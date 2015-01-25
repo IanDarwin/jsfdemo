@@ -1,7 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--
  *** This is the start page, a form the user has
- *** to fill out to get their name into the site's DB.
+ *** to fill out to get their name checked against the site's DB.
+ *** The current version is fake: any login name and password will do.
  -->
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -40,7 +41,6 @@
 					<h:commandButton id="submit"
 						action="#{personHandler.savePerson}" 
 						value="#{msg.askforname_buttontext}">
-						<f:ajax execute="@form" render="@form" />
 					</h:commandButton>
 					</h:panelGrid>
 				</h:form>
