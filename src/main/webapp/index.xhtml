@@ -49,10 +49,10 @@
 				<h:outputText value="#{msg.askforname_switchLanguage}"/>
 				
 				<p:panel>
-					<f:facet name="header">Sports News</f:facet>
+					<f:facet name="header">What's New With Java...</f:facet>
 					<p:feedReader value="http://www.javaworld.com/index.rss" var="news" size="5">
 						<h:outputText value="#{news.title}" style="font-weight: bold;display:block"/>
-						<h:outputText value="#{news.description.value}" escape="false"/>
+						<h:outputLink value="#{news.link}">Read more...</h:outputLink>
 						<p:separator />
 						<f:facet name="error">
 							Unable to access news feed at this time.
