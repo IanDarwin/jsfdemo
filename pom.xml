@@ -23,19 +23,24 @@
 
 	<dependencies>
 
-		<dependency>
-			<groupId>org.primefaces</groupId> 
-			<artifactId>primefaces</artifactId> 
-			<version>4.0</version> 
-			<scope>runtime</scope>
-		</dependency>
-
 		<!-- For JavaEE deployment -->
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>7.0</version>
 			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.primefaces</groupId> 
+			<artifactId>primefaces</artifactId> 
+			<version>4.0</version> 
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>rome</groupId>
+			<artifactId>rome</artifactId>
+			<version>1.0</version>
 		</dependency>
 
 		<dependency>
