@@ -23,10 +23,11 @@
 
 	<dependencies>
 
-		<dependency> 
+		<dependency>
 			<groupId>org.primefaces</groupId> 
 			<artifactId>primefaces</artifactId> 
 			<version>4.0</version> 
+			<scope>runtime</scope>
 		</dependency>
 
 		<!-- For JavaEE deployment -->
