@@ -29,7 +29,7 @@
 			<version>4.0</version> 
 		</dependency>
 
-		<!-- For JBossAS deployment -->
+		<!-- For JavaEE deployment -->
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
