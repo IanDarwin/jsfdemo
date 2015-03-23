@@ -5,6 +5,8 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class Person {
 	private String firstName, lastName;
+	private String address, city, country;
+	private String aboutYou;
 
 	public Person() {
 	}
@@ -27,6 +29,14 @@ public class Person {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public String getAboutYou() {
+		return aboutYou;
+	}
+
+	public void setAboutYou(String aboutYou) {
+		this.aboutYou = aboutYou;
 	}
 
 	@Override
@@ -58,5 +68,29 @@ public class Person {
 		} else if (!lastName.equals(other.lastName))
 			return false;
 		return true;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
 	}
 }

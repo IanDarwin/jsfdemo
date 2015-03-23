@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+	<f:loadBundle basename="resources" var="msg" />
+	
+	<ui:composition template="/templates/standard.xhtml">
+			<ui:define name="pageTitle">Layouts Demo</ui:define>
+			<ui:define name="pageHeader">Layouts Demo</ui:define>
+			<ui:define name="body">
+
+			<!-- Items 2.1, 2.2 input differently; show that input arrangement often doesn't matter -->
+			<h:panelGrid columns='2' border='1'>
+				<h:outputText value="Cell 1.1"/> 
+				<h:outputText value="Cell 1.2"/>
+				<h:outputText value="Cell 2.1"/> <h:outputText value="Cell 2.2"/>
+				<h:outputText value="Cell 3.1"/> 
+				<h:panelGroup>
+					<h:outputText value="Hello"/>
+					<h:outputText value=", "/>
+					<h:outputText value="World"/>
+				</h:panelGroup>
+			</h:panelGrid>
+
+			</ui:define>
+	</ui:composition>
+</html>

@@ -13,3 +13,8 @@ body {
 	vertical-align: middle;
 	color: #33ff66;
 }
+
+/* Row Headings */
+tr.rowOdd     {background-color: #eeeeee; }
+tr.rowEven    {background-color: #cccccc; }
+

@@ -1,18 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--
  *** This is the start page, a form the user has
- *** to fill out to get their name into the site's DB.
+ *** to fill out to get their name checked against the site's DB.
+ *** The current version is fake: any login name and password will do.
  -->
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
 	<f:loadBundle basename="resources" var="msg" />
 
 	<body>
 
-   		<ui:composition template="/templates/standard.xhtml">
+   		<ui:composition template="/templates/login.xhtml">
 
 			<ui:define name="pageTitle">#{msg.askforname_pagetitle}</ui:define>
   
@@ -30,16 +32,34 @@
 					<h:outputText value="#{msg.askforname_prompt_lastname}"/>
 					<h:inputText required="true" id="lastName" value="#{person.lastName}" />
 					<h:message for="lastName"  errorStyle="color:red"/>
+
+					<h:outputText value="#{msg.askforname_prompt_aboutYou}"/>
+					<h:inputTextarea required="false" id="aboutYou" value="#{person.aboutYou}" 
+						rows='5' cols="40"/>
+					<h:message for="aboutYou"  errorStyle="color:red"/>
 					
 					<h:outputText value=""/>
 					<h:commandButton id="submit"
 						action="#{personHandler.savePerson}" 
-						value="#{msg.askforname_buttontext}" />
+						value="#{msg.askforname_buttontext}">
+					</h:commandButton>
 					</h:panelGrid>
 				</h:form>
 				
 				<h:outputText value="#{msg.askforname_switchLanguage}"/>
 				
+				<p:panel>
+					<f:facet name="header">What's New With Java...</f:facet>
+					<p:feedReader value="http://www.javaworld.com/index.rss" var="news" size="5">
+						<h:outputText value="#{news.title}" style="font-weight: bold;display:block"/>
+						<h:outputLink value="#{news.link}">Read more...</h:outputLink>
+						<p:separator />
+						<f:facet name="error">
+							Unable to access news feed at this time.
+						</f:facet>
+					</p:feedReader>
+					<f:facet name="footer">News Feed Courtesy of JavaWorld.com</f:facet>
+				</p:panel>
 			</ui:define>
 		</ui:composition>
 	</body>
