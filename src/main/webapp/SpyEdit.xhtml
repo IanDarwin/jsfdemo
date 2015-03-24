@@ -7,7 +7,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	template="/templates/standard.xhtml">
 
-<ui:define name="title">Dark Ops</ui:define>
+<ui:define name="pageTitle">Dark Ops</ui:define>
 <h:head>
 <f:metadata>
     <f:event type="preRenderView" listener='#{spyHome.wire(request.getParameter("spyId"))}'/>
@@ -30,6 +30,7 @@
 		<br/>
 		Agency:
 		<h:inputText value="#{spyHome.instance.agency}"/>
+		<br/>
 		Comments:
 		<h:inputText value="#{spyHome.instance.comment}" size='70'/>
 	</p:panel>
