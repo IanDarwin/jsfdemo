@@ -3,6 +3,7 @@ package spy;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
 /**
@@ -11,7 +12,8 @@ import javax.faces.bean.ManagedBean;
  * by use of Apache DeltaSpike Data.
  * @author Ian Darwin
  */
-@ManagedBean
+@ManagedBean(name="spyList")
+@ApplicationScoped
 public class SpyList {
 	private static final Spy[] data = {
 		new Spy(1, "Jack",  "Bauer", "LAPD"),
@@ -25,4 +27,3 @@ public class SpyList {
 		return resultList;
 	}
 }
-

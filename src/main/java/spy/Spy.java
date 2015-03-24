@@ -11,6 +11,7 @@ public class Spy {
 	long id;
 	String firstName, lastName;
 	String agency;
+	String comment;
 	
 	/**
 	 * @param id
@@ -61,6 +62,14 @@ public class Spy {
 
 	public void setAgency(String agency) {
 		this.agency = agency;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 }
 
