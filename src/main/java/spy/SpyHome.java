@@ -2,6 +2,7 @@ package spy;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 
 /**
  * This is intended to present a JPA-free but JPA-like interface.
@@ -10,6 +11,7 @@ import javax.faces.bean.ManagedProperty;
  *  * @author Ian Darwin
  */
 @ManagedBean
+@SessionScoped
 public class SpyHome {
 	
 	@ManagedProperty(value="#{spyList}")
@@ -30,6 +32,9 @@ public class SpyHome {
 	}
 	
 	public void wire(String s) {
+		if (s == null) {
+			return;
+		}
 		find(Long.parseLong(s));
 	}
 
@@ -48,7 +53,7 @@ public class SpyHome {
 	 * a Transaction attribute that will make the changes
 	 * get committed.
 	 */
-	public void update() {
-		// empty
+	public String update() {
+		return "SpyList.web";
 	}
 }
