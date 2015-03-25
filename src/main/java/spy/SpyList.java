@@ -20,7 +20,7 @@ public class SpyList {
 		new Spy(1, "Jack",  "Bauer", "LAPD"),
 		new Spy(7, "James", "Bond",  "MI5"),
 		new Spy(2, "Jason", "Bourne", "ex-CIA"),
-		new Spy(3, "J.", "B.", "Kingsman"),
+		new Spy(3, "J.", "B.", "Kingman"),
 	};
 
 	private List<Spy> resultList = new ArrayList<>();
