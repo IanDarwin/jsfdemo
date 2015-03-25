@@ -27,6 +27,10 @@ public class Spy {
 		this.agency = agency;
 	}
 
+	public Spy() {
+		// Most APIs need this empty constructor
+	}
+
 	public long getId() {
 		return id;
 	}

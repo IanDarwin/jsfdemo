@@ -32,10 +32,15 @@ public class SpyHome {
 	}
 	
 	public void wire(String s) {
-		if (s == null) {
+		if (s == null || s.length() == 0) {
+			create();
 			return;
 		}
 		find(Long.parseLong(s));
+	}
+
+	public void create() {
+		instance = new Spy();
 	}
 
 	public Spy find(long id) {
@@ -54,6 +59,20 @@ public class SpyHome {
 	 * get committed.
 	 */
 	public String update() {
+		if (instance.id == 0) {
+			instance.id = findMaxId() + 1;
+			spyList.findAll().add(instance);
+		}
 		return "SpyList.web";
+	}
+
+	private long findMaxId() {
+		long max = 0;
+		for (Spy spy : spyList.findAll()) {
+			if (spy.id > max) {
+				max = spy.id;
+			}
+		}
+		return max;
 	}
 }
