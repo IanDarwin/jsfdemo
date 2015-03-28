@@ -13,14 +13,20 @@
   	<phase-listener>debug.DebugPhaseListener</phase-listener>
   </lifecycle>
 
-	<!-- List here the languages you want to support -->
   <application>
+	<!-- List here the languages you want to support -->
+	<!-- Localize "resources.properties", used directly from pages -->
 	<locale-config>
 		<default-locale>en</default-locale>
 		<supported-locale>en</supported-locale>
 		<supported-locale>es</supported-locale>
 		<supported-locale>fr</supported-locale>
 	</locale-config>
+	<!-- This message bundle should also be localized -->
+	<message-bundle>
+	  	Messages
+	  </message-bundle>
+	
   </application>
 	
 </faces-config>
