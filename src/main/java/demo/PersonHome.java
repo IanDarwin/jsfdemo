@@ -28,6 +28,7 @@ public class PersonHome {
 		// In real life this would check the database:
 		// em.createQuery("from Person p where p.email = ?1").getResultList().size() >0
 		boolean inUse = person.getEmail().equals("ian@darwinsys.com");
+
 		if (inUse) {
 			System.out.println("PersonHome.checkEmailAvailable(): INUSE");
 			FacesContext.getCurrentInstance().addMessage("myForm:emailTF",
