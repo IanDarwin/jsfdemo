@@ -18,21 +18,23 @@
 
 	<h:form>
 	<p:panel>
-	<f:facet name="header">Dark Ops</f:facet>
+		<f:facet name="header">Dark Ops</f:facet>
+		<h:panelGrid columns='2'>
 		Id:
 		<h:outputText value="#{spyHome.instance.id}"/>
-		<br/>
+		
 		First Name:
 		<h:inputText value="#{spyHome.instance.firstName}"/>
-		<br/>
-		Last Name::
+		
+		Last Name:
 		<h:inputText value="#{spyHome.instance.lastName}"/>
-		<br/>
+	
 		Agency:
 		<h:inputText value="#{spyHome.instance.agency}"/>
-		<br/>
+
 		Comments:
 		<h:inputText value="#{spyHome.instance.comment}" size='70'/>
+		</h:panelGrid>
 	</p:panel>
 	
 	<p:commandButton value="Save" action="#{spyHome.update}" ajax='false'/>
