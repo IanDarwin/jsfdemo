@@ -12,6 +12,7 @@ public class Spy {
 	String firstName, lastName;
 	String agency;
 	String comment;
+	String email;
 	
 	/**
 	 * @param id
@@ -74,6 +75,14 @@ public class Spy {
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }
 
