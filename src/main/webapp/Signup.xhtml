@@ -1,0 +1,45 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/standard.xhtml">
+
+<ui:define name="pageTitle">Sign Up</ui:define>
+
+<ui:define name="body">
+
+	<h:form id="myForm">
+	<p:panel>
+		<f:facet name="header">Sign Up</f:facet>
+		<h:panelGrid columns='3'>
+		First Name:
+		<h:inputText id='firstName' value="#{personHome.instance.firstName}" required='true'/>
+		<h:message for='firstName'/>
+		
+		Last Name:
+		<h:inputText id='lastName' value="#{personHome.instance.lastName}" required='true'/>
+		<h:message for='lastName'/>
+		
+		EMail:
+		<h:inputText id='emailTF' value="#{personHome.instance.email}" required='true'>
+				<!-- Email: TLDs are no longer limited to 3 or 4 letters -->
+				<f:validateRegex pattern="\w+@\w+\.\w+" message="{email_syntax}"/>
+				<!-- And must be unique -->
+				<f:ajax event="blur"
+					listener="#{personHome.checkEmailAvailable()}" 
+					render='emailMessage'/>
+		</h:inputText>
+		<h:message id='emailMessage' for='emailTF'/>
+
+		</h:panelGrid>
+	</p:panel>
+	
+	<p:commandButton value="Save" action="#{personHome.savePerson()}"/>
+	<p:commandButton value="Cancel" action="index.web"/>
+	</h:form>
+	
+</ui:define>
+</ui:composition>

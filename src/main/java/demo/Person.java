@@ -5,6 +5,7 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class Person {
 	private String firstName, lastName;
+	private String email;
 	private String address, city, country;
 	private String aboutYou;
 
@@ -29,6 +30,14 @@ public class Person {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getAboutYou() {
@@ -92,5 +101,16 @@ public class Person {
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+	
+	@Override
+	public String toString() {
+		return new StringBuilder()
+			.append(firstName)
+			.append(' ')
+			.append(lastName)
+			.append(' ')
+			.append(email)
+			.toString();
 	}
 }
