@@ -7,6 +7,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
 
+import com.sun.faces.util.MessageUtils;
+
 @ManagedBean
 public class PersonHome {
 	@ManagedProperty(value="#{person}") Person person;
@@ -31,9 +33,10 @@ public class PersonHome {
 
 		if (inUse) {
 			System.out.println("PersonHome.checkEmailAvailable(): INUSE");
+			// This uses the unsupported MessageUtils class to get the message by key
+			FacesMessage message = MessageUtils.getExceptionMessage("email_in_use");
 			FacesContext.getCurrentInstance().addMessage("myForm:emailTF",
-			    new FacesMessage(FacesMessage.SEVERITY_ERROR,
-			        "{email_in_use}", "{email_in_use}"));
+			    message);
 		}
 	}
 	
