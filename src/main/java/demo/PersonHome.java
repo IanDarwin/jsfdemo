@@ -1,7 +1,5 @@
 package demo;
 
-import java.util.regex.Pattern;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
