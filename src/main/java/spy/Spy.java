@@ -2,10 +2,15 @@ package spy;
 
 import java.beans.Transient;
 
+import javax.enterprise.context.ConversationScoped;
+import javax.inject.Named;
+
 /**
  * Represents one secret agent or "spy".
  * @author Ian Darwin
  */
+@ConversationScoped
+@Named
 public class Spy {
 	
 	long id;
