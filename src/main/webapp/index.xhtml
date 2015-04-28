@@ -14,7 +14,7 @@
 
 	<body>
 
-   		<ui:composition template="/templates/login.xhtml">
+   		<ui:composition template="/templates/standard.xhtml">
 
 			<ui:define name="pageTitle">#{msg.askforname_pagetitle}</ui:define>
   
@@ -32,6 +32,17 @@
 					<h:outputText value="#{msg.askforname_prompt_lastname}"/>
 					<h:inputText required="true" id="lastName" value="#{person.lastName}" />
 					<h:message for="lastName"  errorStyle="color:red"/>
+
+					<h:outputText value="#{msg.askforname_prompt_email}"/>
+					<h:inputText id='emailTF' value="#{person.email}" required='true'>
+							<!-- Email: TLDs are no longer limited to 3 or 4 letters -->
+							<f:validateRegex pattern="\w+@\w+\.\w+" message="{email_syntax}"/>
+							<!-- And must be unique -->
+							<f:ajax event="blur"
+								listener="#{personHome.checkEmailAvailable()}" 
+								render='emailMessage'/>
+					</h:inputText>
+					<h:message id='emailMessage' for='emailTF'/>
 
 					<h:outputText value="#{msg.askforname_prompt_aboutYou}"/>
 					<h:inputTextarea required="false" id="aboutYou" value="#{person.aboutYou}" 
