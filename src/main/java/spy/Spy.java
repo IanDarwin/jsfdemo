@@ -1,6 +1,7 @@
 package spy;
 
 import java.beans.Transient;
+import java.io.Serializable;
 
 import javax.enterprise.context.ConversationScoped;
 import javax.inject.Named;
@@ -11,8 +12,9 @@ import javax.inject.Named;
  */
 @ConversationScoped
 @Named
-public class Spy {
-	
+public class Spy implements Serializable {
+
+	private static final long serialVersionUID = 7069366419729306461L;
 	long id;
 	String firstName, lastName;
 	String agency;

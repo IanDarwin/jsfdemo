@@ -6,9 +6,11 @@ import javax.enterprise.context.ConversationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import java.io.Serializable;
+
 @ConversationScoped
 @Named("convBean")
-public class ConversationScopeDemo {
+public class ConversationScopeDemo implements Serializable {
 	@Inject
 	Conversation conv;
 
