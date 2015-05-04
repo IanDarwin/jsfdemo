@@ -13,6 +13,9 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class SpyHome {
+
+	final static String LIST_PAGE = "SpyList";
+	final static String FORCE_REDIRECT = "?faces-redirect=true";
 	
 	@ManagedProperty(value="#{spyList}")
 	private SpyList spyList;
@@ -63,7 +66,22 @@ public class SpyHome {
 			instance.id = findMaxId() + 1;
 			spyList.findAll().add(instance);
 		}
-		return "SpyList.web";
+		return LIST_PAGE + FORCE_REDIRECT;
+	}
+
+	/** Close an editing operation: just end conversation,
+	 * return List page.
+	 * @return The List Page
+	 */
+	public String cancel() {
+		return LIST_PAGE + FORCE_REDIRECT;
+	}
+	
+	/** Like Cancel but for e.g., View page, no conv end.
+	 * @return The List Page
+	 */
+	public String done() {
+		return LIST_PAGE + FORCE_REDIRECT;
 	}
 
 	private long findMaxId() {
