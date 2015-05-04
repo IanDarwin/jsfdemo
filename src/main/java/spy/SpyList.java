@@ -16,6 +16,7 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean(name="spyList")
 @ApplicationScoped
 public class SpyList {
+
 	private static final Spy[] data = {
 		new Spy(1, "Jack",  "Bauer", "LAPD"),
 		new Spy(7, "James", "Bond",  "MI5"),
@@ -26,7 +27,7 @@ public class SpyList {
 	private List<Spy> resultList = new ArrayList<>();
 	
 	public SpyList() {
-		resultList.addAll( Arrays.asList(data));
+		resultList.addAll(Arrays.asList(data));
 	}
 	
 	public List<Spy> findAll() {
