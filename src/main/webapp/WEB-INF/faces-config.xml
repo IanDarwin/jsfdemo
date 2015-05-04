@@ -26,6 +26,10 @@
 	<message-bundle>
 	  	Messages
     </message-bundle>
+	<resource-bundle>
+		<base-name>resources</base-name>
+		<var>msg</var>
+	</resource-bundle>
 	
   </application>
 	
