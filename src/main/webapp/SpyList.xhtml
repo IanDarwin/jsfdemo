@@ -22,36 +22,36 @@
 	<!-- Display the main part of the whole page. -->
 	<p:dataTable border='1' 
 		rendered="#{!empty spyList.findAll()}"
-		var="spy" value="#{spyList.findAll()}" 
+		var="_spy" value="#{spyList.findAll()}" 
 		paginator="true" rows="#{pfTableConstants.rows}"
 		paginatorTemplate="#{pfTableConstants.paginatorTemplate}"
 		rowsPerPageTemplate="#{pfTableConstants.rowsPerPageTemplate}"
 		>
 		<p:column>
 			<f:facet name="header">Id</f:facet>
-			<h:outputText value="#{spy.id}"/>
+			<h:outputText value="#{_spy.id}"/>
 		</p:column>
 		<p:column>
 			<f:facet name="header">First</f:facet>
-			<h:outputText value="#{spy.firstName}"/>
+			<h:outputText value="#{_spy.firstName}"/>
 		</p:column>
 		<p:column>
 			<f:facet name="header">Last</f:facet>
-			<h:outputText value="#{spy.lastName}"/>
+			<h:outputText value="#{_spy.lastName}"/>
 		</p:column>
 		<p:column>
 			<f:facet name="header">Agency</f:facet>
-			<h:outputText value="#{spy.agency}"/>
+			<h:outputText value="#{_spy.agency}"/>
 		</p:column>
 		<p:column style="width: 5%">
 			<f:facet name="header">Operations</f:facet>
 			<h:outputLink value="SpyView.web">
 				View
-				<f:param name="spyId" value="#{spy.id}"/>
+				<f:param name="spyId" value="#{_spy.id}"/>
 			</h:outputLink>
 			<h:outputLink value="SpyEdit.web">
 				Edit
-				<f:param name="spyId" value="#{spy.id}"/>
+				<f:param name="spyId" value="#{_spy.id}"/>
 			</h:outputLink>
 		</p:column>
 	</p:dataTable>
