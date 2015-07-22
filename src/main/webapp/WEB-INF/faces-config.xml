@@ -22,10 +22,7 @@
 		<supported-locale>es</supported-locale>
 		<supported-locale>fr</supported-locale>
 	</locale-config>
-	<!-- This message bundle should also be localized -->
-	<message-bundle>
-	  	Messages
-    </message-bundle>
+    <!-- Text for our pages, localized -->
 	<resource-bundle>
 		<base-name>resources</base-name>
 		<var>msg</var>
