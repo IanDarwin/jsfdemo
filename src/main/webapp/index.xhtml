@@ -59,7 +59,7 @@
 				
 				<p:panel>
 					<f:facet name="header">#{msg.newsreader_title}</f:facet>
-					<p:feedReader value="http://www.javaworld.com/index.rss" var="news" size="5">
+					<p:feedReader value="#{msg.newsreader_url}" var="news" size="5">
 						<h:outputText value="#{news.title}" style="font-weight: bold;display:block"/>
 						<h:outputLink value="#{news.link}">Read more...</h:outputLink>
 						<p:separator />
