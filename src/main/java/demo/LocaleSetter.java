@@ -3,14 +3,17 @@ package demo;
 import java.io.Serializable;
 import java.util.Locale;
 
-import javax.faces.*;
-import javax.faces.bean.*;
-import javax.faces.event.*;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 
-@ManagedBean("localeSetter")
+@ManagedBean(name="localeSetter")
 @SessionScoped
 public class LocaleSetter implements Serializable {
 
+	private static final long serialVersionUID = 6658827577205106791L;
+	
 	String language;
 	String region;
 
@@ -21,6 +24,9 @@ public class LocaleSetter implements Serializable {
 
 	public void update(ActionEvent e) {
 		language = getHidden("language");
+		if (language == null) {
+			throw new IllegalStateException("'language' didn't make it");
+		}
 		region = getHidden("region");
 		if (region == null || region.length() == 0) {
 			setLocale(language);

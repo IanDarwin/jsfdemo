@@ -17,11 +17,11 @@
 			<ui:define name="body">
 				<h:messages globalOnly='true' showSummary="true" showDetail="false" style="color: red; font-weight: bold;"/>
 				<h:form id="enForm">
-					<h:hidden id="language" value="en"/>
-					<h:hidden id="region" value=""/>
+					<h:inputHidden id="language" value="en"/>
+					<h:inputHidden id="region" value="NONE"/>
 					<h:commandButton value="English" 
-						actionListener=#{localeSetter.update}"
-						action=#{localeSetter.go}"
+						actionListener="#{localeSetter.update}"
+						action="#{localeSetter.go}"
 						/>
 				</h:form>
 
