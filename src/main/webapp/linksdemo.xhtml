@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+ *** This page shows the different kinds of links/buttons in standard JSF
+ -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+	<body>
+
+   		<ui:composition template="/templates/standard.xhtml">
+
+			<ui:define name="pageTitle">#{msg.askforname_pagetitle}</ui:define>
+  
+			<ui:define name="pageHeader">#{msg.askforname_pageheader}</ui:define>
+
+			<ui:define name="body">
+
+				<h:messages/>
+
+				<h:form>
+
+				<h:panelGrid columns='2'>
+
+				<h:outputText value="HTML h:link"/>
+				<h:link value="#{simpleDemo.greeting}" outcome="linktarget"/>
+
+				<h:outputText value="HTML h:outputLink"/>
+				<h:outputLink value="linktarget.html">#{simpleDemo.greeting}</h:outputLink>
+
+				<h:outputText value="HTML h:commandLink"/>
+				<h:commandLink value="#{simpleDemo.greeting}" action="#{simpleDemo.process('commandLink')}"/>
+
+				<h:outputText value="HTML h:commandButton"/>
+				<h:commandButton value="#{simpleDemo.greeting}" action="#{simpleDemo.process('commandButton')}"/>
+
+				</h:panelGrid>
+
+				</h:form>
+
+			</ui:define>
+		</ui:composition>
+	</body>
+</html>
