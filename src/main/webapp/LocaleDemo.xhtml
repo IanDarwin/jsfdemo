@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+	<f:loadBundle basename="resources" var="msg" />
+
+	<body>
+
+   		<ui:composition template="/templates/standard.xhtml">
+
+			<ui:define name="pageTitle">#{msg.locale_pagetitle}</ui:define>
+  
+			<ui:define name="pageHeader">#{msg.locale_pageheader}</ui:define>
+
+			<ui:define name="body">
+				<h:messages globalOnly='true' showSummary="true" showDetail="false" style="color: red; font-weight: bold;"/>
+				<h:form id="enForm">
+					<h:inputHidden id="language" value="en"/>
+					<h:inputHidden id="region" value="NONE"/>
+					<h:commandButton value="English" 
+						actionListener="#{localeSetter.update}"
+						action="#{localeSetter.go}"
+						/>
+				</h:form>
+
+				
+			</ui:define>
+		</ui:composition>
+	</body>
+</html>

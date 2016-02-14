@@ -31,15 +31,15 @@
 			<f:facet name="header">Id</f:facet>
 			<h:outputText value="#{_spy.id}"/>
 		</p:column>
-		<p:column>
+		<p:column sortBy="#{_spy.firstName}">
 			<f:facet name="header">First</f:facet>
 			<h:outputText value="#{_spy.firstName}"/>
 		</p:column>
-		<p:column>
+		<p:column sortBy="#{_spy.lastName}">
 			<f:facet name="header">Last</f:facet>
 			<h:outputText value="#{_spy.lastName}"/>
 		</p:column>
-		<p:column>
+		<p:column sortBy="#{_spy.agency}">
 			<f:facet name="header">Agency</f:facet>
 			<h:outputText value="#{_spy.agency}"/>
 		</p:column>
