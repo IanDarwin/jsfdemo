@@ -4,6 +4,11 @@ import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
 import javax.faces.event.PhaseListener;
 
+/**
+ * Shows the different phases of a JSF request.
+ * DO NOT DEPLOY IN PRODUCTION as it puts a LOT of data in your
+ * logfile, maybe enough to slow down your application.
+ */
 public class DebugPhaseListener implements PhaseListener {
 
 	private static final long serialVersionUID = 3303149225999676320L;
