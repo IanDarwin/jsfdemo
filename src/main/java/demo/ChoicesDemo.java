@@ -37,8 +37,9 @@ public class ChoicesDemo {
 
 	public String submit() {
 		// This method is invoked to DO SOMETHING with the input values.
+		// Let's pretend we saved the info to a database
 		// In this demo we have nothing to do... but say hello
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(toString()));
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Profile saved; " + toString()));
 		return "choicesdemo"; // stay put
 	}
 
@@ -76,7 +77,7 @@ public class ChoicesDemo {
 	}
 
 	public String toString() {
-		return "Submit done, enabled = " + enableDemo + 
+		return "emails enabled = " + enableDemo + 
 			", country = " + countryCode + 
 			", colors = " + Arrays.asList(colors) + "; fave " + faveColor;
 	}
