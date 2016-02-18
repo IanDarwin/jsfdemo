@@ -34,7 +34,7 @@ public class ChoicesDemo {
 		// This method is invoked to DO SOMETHING with the input values.
 		// In this demo we have nothing to do... but say hello
 		FacesContext.getCurrentInstance().addMessage(null, 
-			new FacesMessage("Submit done, country = " + countryCode));
+			new FacesMessage("Submit done, enabled = " + enableDemo + ", country = " + countryCode));
 		return "choicesdemo"; // stay put
 	}
 

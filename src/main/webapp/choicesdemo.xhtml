@@ -24,10 +24,10 @@
 
 				<h:panelGrid columns='2'>
 
-				<h:outputText value="HTML h:selectBooleanCheckbox"/>
+				<h:outputText value="h:selectBooleanCheckbox"/>
 				<h:selectBooleanCheckbox value="#{choicesDemo.enableDemo}"/>
 
-				<h:outputText value="HTML h:selectOneMenu"/>
+				<h:outputText value="h:selectOneMenu"/>
 				<h:selectOneMenu value="#{choicesDemo.countryCode}">
 					<f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
 					<f:selectItem itemLabel="Canada" itemValue="CA" />
@@ -38,7 +38,7 @@
 						itemValue="#{_country.code}"/>
 				</h:selectOneMenu>
 
-				<h:outputText value="HTML h:commandButton"/>
+				<h:outputText value="h:commandButton"/>
 				<h:commandButton value="Submit" action="#{choicesDemo.submit()}"/>
 
 				</h:panelGrid>
