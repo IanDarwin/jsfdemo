@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+ *** This page shows the different kinds of choices in standard JSF
+ -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+	<body>
+
+   		<ui:composition template="/templates/standard.xhtml">
+
+			<ui:define name="pageTitle">Choice Items Demo</ui:define>
+  
+			<ui:define name="pageHeader">Choice Items Demo</ui:define>
+
+			<ui:define name="body">
+
+				<h:messages/>
+
+				<h:form>
+
+				<h:panelGrid columns='2'>
+
+				<h:outputText value="HTML h:selectBooleanCheckbox"/>
+				<h:selectBooleanCheckbox value="#{choicesDemo.enableDemo}"/>
+
+				<h:outputText value="HTML h:selectOneMenu"/>
+				<h:selectOneMenu value="#{choicesDemo.countryCode}">
+					<f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
+					<f:selectItem itemLabel="Canada" itemValue="CA" />
+					<f:selectItem itemLabel="U.S.A." itemValue="US" />
+					<!-- Selections can come from individual values like above and/or from a list like below -->
+					<f:selectItems var="_country" value="#{choicesDemo.countries}"
+						itemLabel="#{_country.name}"
+						itemValue="#{_country.code}"/>
+				</h:selectOneMenu>
+
+				<h:outputText value="HTML h:commandButton"/>
+				<h:commandButton value="Submit" action="#{choicesDemo.submit()}"/>
+
+				</h:panelGrid>
+
+				</h:form>
+
+			</ui:define>
+		</ui:composition>
+	</body>
+</html>
