@@ -24,10 +24,26 @@
 
 				<h:panelGrid columns='2'>
 
-				<h:outputText value="h:selectBooleanCheckbox"/>
+				<h:outputText value="h:selectBooleanCheckbox - enable/disable"/>
 				<h:selectBooleanCheckbox value="#{choicesDemo.enableDemo}"/>
 
-				<h:outputText value="h:selectOneMenu"/>
+				<h:outputText value="h:selectManyCheckbox - Colors I Like"/>
+				<h:selectManyCheckbox value="#{choicesDemo.colors}">
+					<f:selectItem itemValue="Red" />
+					<f:selectItem itemValue="Green" />
+					<f:selectItem itemValue="Blue" />
+					<f:selectItem itemValue="Pink" />
+				</h:selectManyCheckbox>
+
+				<h:outputText value="h:selectOneRadio - Favorite Color"/>
+				<h:selectOneRadio value="#{choicesDemo.faveColor}">
+					<f:selectItem itemValue="Red" itemLabel="Red" />
+					<f:selectItem itemValue="Green" itemLabel="Green" />
+					<f:selectItem itemValue="Blue" itemLabel="Blue" />
+					<f:selectItem itemValue="Pink" itemLabel="Pink" />
+				</h:selectOneRadio>
+
+				<h:outputText value="h:selectOneMenu - Country I live in"/>
 				<h:selectOneMenu value="#{choicesDemo.countryCode}">
 					<f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
 					<f:selectItem itemLabel="Canada" itemValue="CA" />
@@ -38,15 +54,7 @@
 						itemValue="#{_country.code}"/>
 				</h:selectOneMenu>
 
-				<h:outputText value="h:selectManyCheckbox"/>
-				<h:selectManyCheckbox value="#{choicesDemo.colors}">
-					<f:selectItem itemValue="Red" />
-					<f:selectItem itemValue="Green" />
-					<f:selectItem itemValue="Blue" />
-					<f:selectItem itemValue="Pink" />
-				</h:selectManyCheckbox>
-
-				<h:outputText value="h:commandButton"/>
+				<h:outputText value="h:commandButton - Submit"/>
 				<h:commandButton value="Submit" action="#{choicesDemo.submit()}"/>
 
 				</h:panelGrid>

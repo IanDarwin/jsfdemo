@@ -12,6 +12,7 @@ public class ChoicesDemo {
 	boolean enableDemo;
 	protected String countryCode;
 	protected String[] colors;
+	protected String faveColor;
 
 	public final class Country {
 		public final String name;
@@ -66,9 +67,17 @@ public class ChoicesDemo {
 		this.colors = colors;
 	}
 
+	public String getFaveColor() {
+		return faveColor;
+	}
+
+	public void setFaveColor(String faveColor) {
+		this.faveColor = faveColor;
+	}
+
 	public String toString() {
 		return "Submit done, enabled = " + enableDemo + 
 			", country = " + countryCode + 
-			", colors = " + Arrays.asList(colors);
+			", colors = " + Arrays.asList(colors) + "; fave " + faveColor;
 	}
 }
