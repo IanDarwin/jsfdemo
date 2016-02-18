@@ -38,6 +38,14 @@
 						itemValue="#{_country.code}"/>
 				</h:selectOneMenu>
 
+				<h:outputText value="h:selectManyCheckbox"/>
+				<h:selectManyCheckbox value="#{choicesDemo.colors}">
+					<f:selectItem itemValue="Red" />
+					<f:selectItem itemValue="Green" />
+					<f:selectItem itemValue="Blue" />
+					<f:selectItem itemValue="Pink" />
+				</h:selectManyCheckbox>
+
 				<h:outputText value="h:commandButton"/>
 				<h:commandButton value="Submit" action="#{choicesDemo.submit()}"/>
 

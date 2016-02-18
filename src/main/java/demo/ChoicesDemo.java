@@ -1,5 +1,7 @@
 package demo;
 
+import java.util.Arrays;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
@@ -8,6 +10,8 @@ import javax.faces.context.FacesContext;
 public class ChoicesDemo {
 
 	boolean enableDemo;
+	protected String countryCode;
+	protected String[] colors;
 
 	public final class Country {
 		public final String name;
@@ -33,16 +37,13 @@ public class ChoicesDemo {
 	public String submit() {
 		// This method is invoked to DO SOMETHING with the input values.
 		// In this demo we have nothing to do... but say hello
-		FacesContext.getCurrentInstance().addMessage(null, 
-			new FacesMessage("Submit done, enabled = " + enableDemo + ", country = " + countryCode));
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(toString()));
 		return "choicesdemo"; // stay put
 	}
 
 	public Country[] getCountries() {
 		return countries;
 	}
-
-	protected String countryCode;
 
 	public void setCountryCode(String countryCode) {
 		this.countryCode = countryCode;
@@ -55,5 +56,19 @@ public class ChoicesDemo {
 	}
 	public void setEnableDemo(boolean enableDemo) {
 		this.enableDemo = enableDemo;
+	}
+
+	public String[] getColors() {
+		return colors;
+	}
+
+	public void setColors(String[] colors) {
+		this.colors = colors;
+	}
+
+	public String toString() {
+		return "Submit done, enabled = " + enableDemo + 
+			", country = " + countryCode + 
+			", colors = " + Arrays.asList(colors);
 	}
 }
