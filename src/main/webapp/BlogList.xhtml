@@ -1,0 +1,40 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/standard.xhtml">
+
+<ui:define name="pageHeader">My Blog, Which Is My Own</ui:define>
+
+<ui:define name="body">
+
+	<p:panel>
+	<f:facet name="header">Welcome to My First JSF Blog</f:facet>
+
+	<!-- Display the main part of the whole page. -->
+	<p:dataList border='1' var="_entry" value="#{blogster.list()}">
+		<p:column>
+			<f:facet name="header">Date</f:facet>
+			<h:outputText value="#{_entry.date}"/>
+		</p:column>
+		#{' '}
+		<p:column sortBy="#{_entry.subject}">
+			<b><f:facet name="header">Subject</f:facet></b>
+			<h:outputText value="#{_entry.subject}"/>
+		</p:column>
+		<br/>
+		<p:column>
+			<f:facet name="header">Content</f:facet>
+			<h:outputText value="#{_entry.content}" escape="false"/>
+		</p:column>
+	</p:dataList>
+	<h:form>
+	<br/>
+	<p:button outcome="BlogAdd.web" value="Write Something!"/>
+	</h:form>
+	</p:panel>
+</ui:define>
+</ui:composition>

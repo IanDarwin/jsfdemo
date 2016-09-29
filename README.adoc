@@ -2,16 +2,28 @@
 
 This is Ian's JSF and Facelets demo project.
 
-It shows I18N as well as a simple "managed bean"
-structure with one data bean and one action bean,
-the recommended split that is NOT used in most
-introductory examples.
-
-To I18N a JSF app:
+It shows Internationalization. To I18N a JSF app:
 
 	* create Properties files for the languages;
 	* list the languages in faces-config.xml;
 	* f:loadBundle to load the props, and change ALL
 		plain text to JSF-EL
+		
+In the "Blog" feature it shows a traditional JSF bean
+used to create and list entities.
 
-Recently worked with Eclipse; has been mavenized, hope it still works ATM.
+It also shows a simple "managed bean"
+structure with one data bean and one action bean,
+the recommended split that is NOT used in most
+introductory examples.
+
+== SECURITY (NOT)
+
+**DO NOT** deploy this webapp on the Internet; you will be eaten by worms
+in no time. See OWASP.org to find out what needs to be improved!
+
+== Status 
+
+Compiles under Eclipse; has been mavenized, and still works.
+For Wildfly, just use `mvn wildfly:deploy`. For other servers,
+see your server's documentation.
