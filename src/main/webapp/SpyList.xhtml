@@ -14,14 +14,8 @@
 	<p:panel>
 	<f:facet name="header">Here's looking at your Spies - #{spyList.findAll().size()} of them.</f:facet>
 
-	<!-- Print the table, or, an error -->
-	<h:outputText
-		value="Arrr, Billy! I can't find any spies. Did we research them yet??"
-		rendered="#{empty spyList.findAll()}"/>
-
 	<!-- Display the main part of the whole page. -->
 	<p:dataTable border='1' 
-		rendered="#{!empty spyList.findAll()}"
 		var="_spy" value="#{spyList.findAll()}" 
 		paginator="true" rows="#{pfTableConstants.rows}"
 		paginatorTemplate="#{pfTableConstants.paginatorTemplate}"
