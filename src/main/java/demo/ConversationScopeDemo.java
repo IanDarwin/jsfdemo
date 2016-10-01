@@ -9,7 +9,6 @@ import javax.inject.Named;
 import java.io.Serializable;
 
 @ConversationScoped
-@Named("convBean")
 public class ConversationScopeDemo implements Serializable {
 
 	private static final long serialVersionUID = -6623869935887347917L;
