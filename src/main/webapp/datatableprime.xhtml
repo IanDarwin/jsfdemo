@@ -9,9 +9,6 @@
 			<ui:define name="pageTitle">#{msg.datatable_demo}</ui:define>
 			<ui:define name="pageHeader">#{msg.datatable_demo}</ui:define>
 			<ui:define name="body">
-				<p:panel rendered="#{ empty searchResults.results}">
-					<h:outputText value="#{msg.no_results_found}"/>
-				</p:panel>
 				<p:dataTable  rendered="#{!empty searchResults.results}"
 					var="p" value="#{searchResults.results}">
 					<p:column>
