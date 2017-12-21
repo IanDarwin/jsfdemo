@@ -25,6 +25,7 @@ public class DebugPhaseListener implements PhaseListener {
 	}
 
 	/** Called to find out what phaseId's we are interested in */
+	@Override
 	public PhaseId getPhaseId() {
 		return PhaseId.ANY_PHASE;
 	}
