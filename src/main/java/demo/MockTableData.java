@@ -1,5 +1,6 @@
 package demo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import javax.inject.Named;
 
 /** Provide some fake data so that this project can run without needing to set up JPA */
 @Named("searchResults") @SessionScoped
-public class MockTableData {
+public class MockTableData implements Serializable {
 
 	static final List<Person> resultData = new ArrayList<Person>();
 
