@@ -1,5 +1,7 @@
 package demo;
 
+import java.io.Serializable;
+
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
@@ -13,7 +15,7 @@ import javax.inject.Named;
  * @author Ian Darwin
  */
 @Named @SessionScoped
-public class PostalCodeValidationDemo {
+public class PostalCodeValidationDemo implements Serializable {
 
 	private Country country;
 	

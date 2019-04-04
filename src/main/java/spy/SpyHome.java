@@ -1,5 +1,7 @@
 package spy;
 
+import java.io.Serializable;
+
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -12,7 +14,7 @@ import javax.inject.Named;
  */
 @Named
 @SessionScoped
-public class SpyHome {
+public class SpyHome implements Serializable {
 
 	final static String LIST_PAGE = "SpyList";
 	final static String FORCE_REDIRECT = "?faces-redirect=true";

@@ -1,5 +1,6 @@
 package blogpost;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +9,8 @@ import javax.inject.Named;
 
 @Named
 @SessionScoped // Keep the list in memory
-public class Blogster {
+public class Blogster implements Serializable {
+
 	private String subject;
 	private String content;
 
