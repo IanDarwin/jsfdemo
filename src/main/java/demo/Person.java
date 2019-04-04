@@ -1,8 +1,8 @@
 package demo;
 
-import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
 
-@ManagedBean
+@Named
 public class Person {
 	private String firstName, lastName;
 	private String email;

@@ -4,11 +4,13 @@ import java.beans.Transient;
 import java.io.Serializable;
 
 import javax.enterprise.context.ConversationScoped;
+import javax.inject.Named;
 
 /**
  * Represents one secret agent or "spy".
  * @author Ian Darwin
  */
+@Named
 @ConversationScoped
 public class Spy implements Serializable {
 

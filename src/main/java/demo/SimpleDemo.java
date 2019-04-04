@@ -3,10 +3,10 @@ package demo;
 import java.time.LocalDateTime;
 
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 
-@ManagedBean
+@Named
 public class SimpleDemo {
 
 	public String getGreeting() {

@@ -3,12 +3,12 @@ package demo;
 import java.io.Serializable;
 import java.util.Locale;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+import javax.inject.Named;
 
-@ManagedBean(name="localeSetter")
+@Named("localeSetter")
 @SessionScoped
 public class LocaleSetter implements Serializable {
 

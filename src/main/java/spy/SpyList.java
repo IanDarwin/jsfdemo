@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 
 /**
  * This is intended to present a JPA-free but JPA-like interface;
@@ -13,7 +13,7 @@ import javax.faces.bean.ManagedBean;
  * by use of Apache DeltaSpike Data.
  * @author Ian Darwin
  */
-@ManagedBean(name="spyList")
+@Named("spyList")
 @ApplicationScoped
 public class SpyList {
 

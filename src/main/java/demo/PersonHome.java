@@ -1,11 +1,12 @@
 package demo;
 
+import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 
-@ManagedBean
+@Named @RequestScoped
 public class PersonHome {
 	@ManagedProperty(value="#{person}") Person person;
 	// @PersistenceContext EntityManager em;
