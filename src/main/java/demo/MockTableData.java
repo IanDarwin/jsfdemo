@@ -3,10 +3,11 @@ package demo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 /** Provide some fake data so that this project can run without needing to set up JPA */
-@Named("searchResults")
+@Named("searchResults") @RequestScoped
 public class MockTableData {
 
 	static final List<Person> resultData = new ArrayList<Person>();

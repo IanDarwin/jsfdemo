@@ -2,15 +2,14 @@ package demo;
 
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named @RequestScoped
 public class PersonHome {
-	@ManagedProperty(value="#{person}") Person person;
-	// @PersistenceContext EntityManager em;
-
+	@Inject Person person;
+	
 	public String savePerson() {
 		System.out.println(
 			"Saving person " + person.getFirstName() + ' ' + person.getLastName());

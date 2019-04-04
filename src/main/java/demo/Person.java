@@ -1,8 +1,9 @@
 package demo;
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
-@Named
+@Named @RequestScoped
 public class Person {
 	private String firstName, lastName;
 	private String email;
