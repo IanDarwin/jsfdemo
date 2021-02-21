@@ -1,9 +1,4 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--
- *** This is the start page, a form the user has
- *** to fill out to get their name checked against the site's DB.
- *** The current version is fake: any login name and password will do.
- -->
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -11,7 +6,9 @@
       xmlns:p="http://primefaces.org/ui">
 <h:head>
 <f:metadata>
-    <f:event type="preRenderView" listener='#{spyHome.wire(request.getParameter("spyId"))}'/>
+    <f:viewParam id='spyId' name='spyId' value='#{spyHome.id}'
+		converter="javax.faces.Long" required='false'/>
+	<f:viewAction action="#{spyHome.wire}" />
 </f:metadata>
 </h:head>
 

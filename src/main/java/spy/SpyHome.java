@@ -34,12 +34,12 @@ public class SpyHome {
 		return instance;
 	}
 	
-	public void wire(String s) {
-		if (s == null || s.length() == 0) {
+	public void wire(Long id) {
+		if (id == null || id.length() == 0) {
 			create();
 			return;
 		}
-		find(Long.parseLong(s));
+		find(s);
 	}
 
 	public void create() {

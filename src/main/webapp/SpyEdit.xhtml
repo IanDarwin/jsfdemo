@@ -10,7 +10,9 @@
 <ui:define name="pageTitle">Dark Ops</ui:define>
 <h:head>
 <f:metadata>
-    <f:event type="preRenderView" listener='#{spyHome.wire(request.getParameter("spyId"))}'/>
+    <f:viewParam id='spyId' name='spyId' value='#{spyHome.id}'
+		converter="javax.faces.Long" required='false'/>
+	<f:viewAction action="#{spyHome.wire}" />
 </f:metadata>
 </h:head>
 
