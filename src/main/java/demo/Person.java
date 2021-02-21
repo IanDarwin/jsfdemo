@@ -1,8 +1,9 @@
 package demo;
 
-import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 
-@ManagedBean
+@Named @RequestScoped
 public class Person {
 	private String firstName, lastName;
 	private String email;

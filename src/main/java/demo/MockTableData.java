@@ -1,13 +1,15 @@
 package demo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
 /** Provide some fake data so that this project can run without needing to set up JPA */
-@ManagedBean(name="searchResults")
-public class MockTableData {
+@Named("searchResults") @SessionScoped
+public class MockTableData implements Serializable {
 
 	static final List<Person> resultData = new ArrayList<Person>();
 

@@ -3,15 +3,15 @@ package demo;
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
- 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
+
 import org.primefaces.model.map.DefaultMapModel;
 import org.primefaces.model.map.LatLng;
 import org.primefaces.model.map.MapModel;
 import org.primefaces.model.map.Marker;
  
-@ManagedBean
+@Named
 @ApplicationScoped
 public class LtLocations implements Serializable {
 

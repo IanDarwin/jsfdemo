@@ -1,8 +1,10 @@
 package spy;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
+import java.io.Serializable;
+
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  * This is intended to present a JPA-free but JPA-like interface.
@@ -10,14 +12,14 @@ import javax.faces.bean.SessionScoped;
  * the author's darwinsys-ee project, using EntityHome.
  *  * @author Ian Darwin
  */
-@ManagedBean
+@Named
 @SessionScoped
-public class SpyHome {
+public class SpyHome implements Serializable {
 
 	final static String LIST_PAGE = "SpyList";
 	final static String FORCE_REDIRECT = "?faces-redirect=true";
 	
-	@ManagedProperty(value="#{spyList}")
+	@Inject
 	private SpyList spyList;
 
 	private Spy instance;

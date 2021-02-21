@@ -1,20 +1,22 @@
 package demo;
 
-import javax.annotation.ManagedBean;
+import java.io.Serializable;
+
+import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.SessionScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 
 /**
  * Simple validation of a method in a "home"-type object
  * that can validate based on related state
  * @author Ian Darwin
  */
-@ManagedBean 
-@SessionScoped
-public class PostalCodeValidationDemo {
+@Named @SessionScoped
+public class PostalCodeValidationDemo implements Serializable {
+
 	private Country country;
 	
 	public void validatePostCode(FacesContext jsfContext,

@@ -1,14 +1,16 @@
 package blogpost;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
-@ManagedBean
+@Named
 @SessionScoped // Keep the list in memory
-public class Blogster {
+public class Blogster implements Serializable {
+
 	private String subject;
 	private String content;
 
