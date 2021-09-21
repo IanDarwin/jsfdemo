@@ -37,7 +37,7 @@ public class SpyHome implements Serializable {
 	}
 	
 	public void wire(Long id) {
-		if (id == null) == 0) {
+		if (id == null) {
 			create();
 			return;
 		}
